@@ -9,7 +9,7 @@ import java.math.RoundingMode;
 public class Parcial1Ejercicio2 {
 
    
-    public static void main(String[] args) throws IOException {    
+    public static boolean main(String[] args) throws IOException {    
        // void Menu(){
         String Nombre = null,Apellido = null,Puesto = null;
         double HorasTrab = 0;
@@ -31,9 +31,9 @@ public class Parcial1Ejercicio2 {
         
                 switch (op){                   
                     case 1://Agregar empleado     
-                     for(int i=0; 5>; i++){
+//                     for(int i=1; i<=2; i++){
                      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-                     System.out.println("INGRESE DATOS DEL EMPLEADO");                    
+                     System.out.println("INGRESE DATOS DEL EMPLEADO ");                    
                      System.out.println("Nombre"); 
                      Nombre = br.readLine();
                      System.out.println("Apellido");
@@ -47,15 +47,15 @@ public class Parcial1Ejercicio2 {
                          Parcial1Ejercicio2.main(null);
                          break;
                      }
-                     System.out.println("Cambios salvados...");                    
                      
-
-//                    Parcial1Ejercicio2.main(null);
-continue;
-}
+                     System.out.println("Empleado Guardado ");
+                     
+//                     continue;                    
+//}
+                     Parcial1Ejercicio2.main(null);
                     case 2://Mostrar calculos de salarios  
-                     if(HorasTrab<=160){
-                         
+                     do{
+                         if(HorasTrab<=160){ 
                          Horast = HorasTrab*9.75;
                          BigDecimal bd = new BigDecimal(Horast).setScale(2, RoundingMode.HALF_UP);
                          ISSS = Horast*0.0525;
@@ -68,12 +68,31 @@ continue;
                          BigDecimal bd4 = new BigDecimal(Liquido).setScale(2, RoundingMode.HALF_UP);
                          System.out.println("calculo de salarios");
                          System.out.println("Tu Sueldo es: "+"Nombre: "+ Nombre+ ", " + "Apellido: " + Apellido+", "+"Puesto: " +
-                                 Puesto+", " +"Horas Trabajadas: "+ HorasTrab+", "+"ISSS: " + bd1+", "+"AFP: " + bd2+", "+"Renta: " + bd3+", "+"Liquido: " + bd4);
-                         
+                         Puesto+", " +"Horas Trabajadas: "+ HorasTrab+", "+"ISSS: " + bd1+", "+"AFP: " + bd2+", "+"Renta: " + bd3+", "+"Liquido: " + bd4);
+                         }
+                         else{
+                         if(HorasTrab>160 && HorasTrab<=500){ 
+                         HorasEx = HorasTrab*11.50;
+                         BigDecimal bd0 = new BigDecimal(HorasEx).setScale(2, RoundingMode.HALF_UP);
+                         Horast = HorasTrab*9.75;
+                         BigDecimal bd = new BigDecimal(Horast).setScale(2, RoundingMode.HALF_UP);
+                         ISSS = Horast*0.0525;
+                         BigDecimal bd1 = new BigDecimal(ISSS).setScale(2, RoundingMode.HALF_UP);
+                         AFP = (Horast*0.0688);
+                         BigDecimal bd2 = new BigDecimal(AFP).setScale(2, RoundingMode.HALF_UP);
+                         Renta = (Horast*0.10);
+                         BigDecimal bd3 = new BigDecimal(Renta).setScale(2, RoundingMode.HALF_UP);
+                         Liquido = (Horast - ISSS - AFP - Renta);
+                         BigDecimal bd4 = new BigDecimal(Liquido).setScale(2, RoundingMode.HALF_UP);
+                   
+                         System.out.println("calculo de salarios");
+                         System.out.println("Tu Sueldo es: "+"Nombre: "+ Nombre+ ", " + "Apellido: " + Apellido+", "+"Puesto: " +
+                                 Puesto+", " +"Horas Trabajadas: "+ HorasTrab+", "+"ISSS: " + bd1+", "+"AFP: " + bd2+", "+"Renta: " + bd3+", "+"Liquido: " + bd4);}
                      }
-                     else {}
-                     
-                    break;
+                     }
+                     while (HorasTrab>160 && HorasTrab<=500);{
+                             }    return false;
+
                     case 3://Salir del sistema
                      System.out.println("Saliendo del programa");
                      break;
