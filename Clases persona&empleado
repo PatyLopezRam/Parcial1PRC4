@@ -1,0 +1,10 @@
+package ejercicio2;
+public class Persona {
+        String Apellido,Nombre,Puesto;
+}
+
+////////////////
+package ejercicio2;
+public class Empleado {
+    Double Liquido,Salario,Renta,ISSS, AFP;   
+}
