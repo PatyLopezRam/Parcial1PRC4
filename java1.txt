@@ -1,0 +1,53 @@
+package ejercicio2;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+import java.io.*;
+
+public class Ejercicio2 {
+    public static String [] Nombre,Apellido,Puesto;
+    public static int [] HorasTrab,HorasEx,ISSS,AFP,Renta,Liquido;
+    public static void main(String[] args) throws IOException {    
+       // void Menu(){
+        int op=0;
+        Scanner leer=new Scanner(System.in);
+        System.out.println("*Menú de opciones**"); 
+        System.out.println("1.Agregar empleado"); 
+        System.out.println("2.Mostrar calculo de salarios");
+        System.out.println("3.Salir del sistema");
+        System.out.println("Digite la opción");
+        op=leer.nextInt();
+        
+                switch (op){                   
+                    case 1://Agregar empleado     
+                     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                     System.out.println("*INGRESE DATOS DEL EMPLEADO*");                    
+                     System.out.println("Nombre"); 
+                     String Nombre = br.readLine();
+                     System.out.println("Apellido");
+                     String Apellido = br.readLine();
+                     System.out.println("Puesto");
+                     String Puesto = br.readLine();
+                     System.out.println("Horas trabajadas");
+                     System.out.println("CAMPO OBLIGATORIO");// agregar verificacion.
+                    
+                     int HorasTrab = br.readLine();            
+                     System.out.println("Cambios salvados...");                    
+                     
+                    break;
+                    case 2://Mostrar calculos de salarios
+                     System.out.println("calculo de salarios");
+                     //int HorasTrab=0;
+                     if(HorasTrab<160 && >0){
+                         
+                     }
+                     
+                    break;
+                    case 3://Salir del sistema
+                     System.out.println("Saliendo del programa");
+                     break;
+                    default:
+                     System.out.println("Opción no valida");
+                    break;
+                 }
+    }
+ }
